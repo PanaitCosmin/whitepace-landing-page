@@ -1,1 +1,1 @@
-console.log("Hello World");//# sourceMappingURL=script.js.map
+const navLinks=document.querySelectorAll(".navbar__link"),navDropdowns=document.querySelectorAll(".navbar__dropdown");navLinks.forEach(((n,o)=>{n.addEventListener("click",(()=>{navDropdowns[o].classList.toggle("navbar__dropdown--show")}))}));//# sourceMappingURL=script.js.map

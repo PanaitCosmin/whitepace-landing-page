@@ -1,1 +1,1 @@
-{"version":3,"file":"script.js","names":["console","log"],"sources":["script.js"],"mappings":"AAAAA,QAAQC,IAAI","ignoreList":[]}
+{"version":3,"file":"script.js","names":["navLinks","document","querySelectorAll","navDropdowns","forEach","link","idx","addEventListener","classList","toggle"],"sources":["script.js"],"mappings":"AAAA,MAAMA,SAAWC,SAASC,iBAAiB,iBACrCC,aAAeF,SAASC,iBAAiB,qBAE/CF,SAASI,SAAQ,CAACC,EAAMC,KAEpBD,EAAKE,iBAAiB,SAAS,KAC3BJ,aAAaG,GAAKE,UAAUC,OAAO,yBAAwB,GAC9D","ignoreList":[]}
