@@ -1,0 +1,27 @@
+@use '../abstracts' as abs;
+
+// Button Primary - Login
+.btn-primary {
+    background-color: abs.$secondary-yellow;
+    padding: abs.toRem(16) abs.toRem(40);
+    color: abs.$primary-dark-blue;
+}
+
+// Button Secondary
+.btn-secondary {
+    background-color: abs.$primary-light-blue;
+    color: abs.$white;
+    padding: abs.toRem(16) abs.toRem(24);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:after {
+        content: '\2192'; // Unicode for the arrow right symbol →
+        margin-left: abs.toRem(8); 
+        font-size: abs.toRem(16); 
+        color: abs.$white; 
+    }
+
+}

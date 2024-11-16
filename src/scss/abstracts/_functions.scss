@@ -1,0 +1,23 @@
+@use "sass:math";
+
+// Divide $pixel by $base to return rems
+// Throw an error if the parameter has a unit
+@function toRem($pixel, $base: 16) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, $base) + #{'rem'};
+    } 
+    @else {
+        @error "Error. The toRem() function doesn't accept units.";
+    }
+}
+
+// Divide $pixel by 16 to return ems
+// Throw an error if the parameter has a unit
+@function toEm($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16) + #{'em'};
+    } 
+    @else {
+        @error "Error. The toEm() function doesn't accept units.";
+    }
+}

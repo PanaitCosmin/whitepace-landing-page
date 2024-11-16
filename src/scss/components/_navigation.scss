@@ -1,0 +1,44 @@
+@use '../abstracts' as abs;
+
+.navbar {
+    padding: abs.toRem(16) abs.toRem(32);
+    @include abs.flex-space-between-center;
+
+    &__link {
+        display: none;
+
+        @include abs.breakpoint-up(desktop) {
+            display: block;
+
+            li {
+                display: inline-block;
+                margin-right: abs.toRem(32);
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        button {
+            margin-inline: abs.toRem(10);
+        }
+
+    }
+
+    &__cta {
+        display: none;
+
+        @include abs.breakpoint-up(tablet) {
+            display: block;
+            
+        }
+        
+    }
+
+    &__hamburger-menu--disable{
+        @include abs.breakpoint-up(desktop) {
+            display: none;
+        }
+    }
+};
