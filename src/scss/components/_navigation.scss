@@ -4,16 +4,38 @@
     padding: abs.toRem(16) abs.toRem(32);
     @include abs.flex-space-between-center;
 
-    &__link {
+    &__links {
         display: none;
+        color: abs.$primary-light-blue;
 
         @include abs.breakpoint-up(desktop) {
             display: block;
 
             li {
                 display: inline-block;
+                position: relative;
                 margin-right: abs.toRem(32);
             }
+        }
+
+        .navbar__link {
+            @include abs.add-dropdown-icon('&');
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        background-color: abs.$primary-light-blue;
+        
+        &--show {
+            display: block;
+        }
+
+        a {
+            padding: abs.toRem(8) abs.toRem(8);
+            display: block;
         }
     }
 
@@ -33,7 +55,6 @@
             display: block;
             
         }
-        
     }
 
     &__hamburger-menu--disable{
