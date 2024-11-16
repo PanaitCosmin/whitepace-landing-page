@@ -1,4 +1,8 @@
 @use 'abstracts/breakpoints' as bp;
+@use 'abstracts/functions' as f;
+
+// Path to the down-arrow SVG
+$down-arrow: url('../icons/down-arrow.svg');
 
 @mixin breakpoint-up($viewport) {
     $min-width: map-get(bp.$breakpoints-up, $viewport);
@@ -16,4 +20,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@mixin add-dropdown-icon($selector) {
+    #{$selector} {
+        position: relative; 
+        &:after {
+            content: '';
+            display: inline-block;
+            background: $down-arrow no-repeat center;
+            background-size: contain;
+            width: 1.5rem; 
+            height: 1.5rem; 
+            margin-left: 0.15rem; 
+            position: relative;
+            top: f.toRem(7);
+        }
+    }
 }
