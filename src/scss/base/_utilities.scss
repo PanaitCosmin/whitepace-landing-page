@@ -1,5 +1,13 @@
+@use '../abstracts/' as abs;
+
 .flex-between-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.container {
+    max-width: abs.toRem(1440);
+    margin-inline: auto;
+    padding-inline: abs.toRem(32);
 }
