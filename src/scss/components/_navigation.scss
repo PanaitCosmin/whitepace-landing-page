@@ -1,7 +1,8 @@
 @use '../abstracts' as abs;
 
 .navbar {
-    padding: abs.toRem(16) abs.toRem(32);
+    padding-top: abs.toRem(16);
+    padding-bottom: abs.toRem(16);
     @include abs.flex-space-between-center;
 
     &__links {
