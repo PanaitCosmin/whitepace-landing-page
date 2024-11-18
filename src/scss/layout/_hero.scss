@@ -1,0 +1,81 @@
+@use '../abstracts/' as abs;
+
+.hero {
+    color: abs.$primary-light-blue;
+
+    &__wrapper {
+        display: flex; /* Flexbox for inner content */
+        flex-direction: column;
+        align-items: stretch; /* Ensures both containers stretch to equal height */
+        width: 100%;    
+
+        @include abs.breakpoint-up(tablet) {
+            flex-direction: row;
+        }
+    }
+
+    &__content {
+        flex: 1; /* Allows this section to take up equal or remaining space */
+        display: flex; /* Flexbox inside content for proper alignment */
+        flex-direction: column; /* Ensures children are stacked */
+        justify-content: space-between; /* Vertically centers the text inside the left column */
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+
+        @include abs.breakpoint-up(tablet) {
+            text-align: left;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
+    }
+
+    &__text {
+        max-width: 60ch;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        @include abs.breakpoint-up(tablet) {
+            align-items: flex-start;
+        }
+    }
+
+    img {
+        padding: 1.5rem;
+        flex: 1; /* Allows the image to take up space equally with hero__content */
+        max-width: 100%; /* Ensures the image doesn't overflow */
+        height: auto; /* Maintains aspect ratio */
+        
+        @include abs.breakpoint-up(tablet) {
+            padding: 0;
+        }
+    }
+}
+
+
+
+
+// Desktop
+
+// &__wrapper {
+//     display: flex; /* Flexbox for inner content */
+//     align-items: stretch; /* Ensures both containers stretch to equal height */
+//     gap: 200px; /* Adds spacing between content and image */
+//     width: 100%;    
+// }
+
+// &__content {
+//     flex: 1; /* Allows this section to take up equal or remaining space */
+//     display: flex; /* Flexbox inside content for proper alignment */
+//     flex-direction: column; /* Ensures children are stacked */
+//     justify-content: space-between; /* Vertically centers the text inside the left column */
+//     align-items: flex-start;
+// }
+
+// img {
+//     flex: 1; /* Allows the image to take up space equally with hero__content */
+//     max-width: 100%; /* Ensures the image doesn't overflow */
+//     height: auto; /* Maintains aspect ratio */
+// }
