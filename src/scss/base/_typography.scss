@@ -17,3 +17,14 @@ a {
         color: abs.$secondary-yellow;
     }
 }
+
+section {
+    margin-top: abs.toRem(100);
+    margin-bottom: abs.toRem(100);
+}
+
+h1 {
+    line-height: 1.2;
+    max-width: 16ch;
+    font-size: clamp(abs.toRem(36), calc(2.5vw + 1.5rem), abs.toRem(64));
+}
