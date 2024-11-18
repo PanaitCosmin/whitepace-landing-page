@@ -11,6 +11,7 @@ const paths = {
     scss: 'src/scss/**/*.scss',
     js: 'src/js/**/*.js',
     icons: 'icons/**/*',
+    imgs: 'images/**/*',
     output: 'dist',
 }
 
@@ -34,6 +35,12 @@ function scssTask() {
 function iconsTask() {
     return src(paths.icons)
         .pipe(dest(`${paths.output}/icons`));
+}
+
+// Copy Images Task
+function imgsTask() {
+    return src(paths.imgs)
+        .pipe(dest(`${paths.output}/images`))
 }
 
 // JS Tasks 
@@ -64,6 +71,7 @@ function watchTasks() {
     watch(paths.html, series(htmlTask ,browsersyncReload))
     watch([paths.scss, paths.js], series(parallel(scssTask, jsTask), browsersyncReload))
     watch(paths.icons, series(iconsTask, browsersyncReload))
+    watch(paths.imgs, series(imgsTask, browsersyncReload))
 }
 
 // Default Gulp Task
@@ -72,6 +80,7 @@ exports.default = series(
     jsTask,
     htmlTask,
     iconsTask,
+    imgsTask,
     browsersyncServe,
     watchTasks
 )
