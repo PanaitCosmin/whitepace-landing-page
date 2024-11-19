@@ -91,4 +91,6 @@ $down-arrow: url('../icons/down-arrow.svg');
             padding: 0;
         }
     }
+
+    @content;
 }
