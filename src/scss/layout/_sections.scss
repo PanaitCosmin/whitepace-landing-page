@@ -1,0 +1,5 @@
+@use '../abstracts/' as abs;
+
+.hero {
+   @include abs.section-styles(abs.$primary-light-blue)
+}
