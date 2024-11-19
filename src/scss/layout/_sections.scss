@@ -5,5 +5,17 @@
 }
 
 .management  {
-  @include abs.section-styles(abs.$black)
+   @include abs.section-styles(abs.$black)
+}
+
+.connectivity {
+   @include abs.section-styles(abs.$black);
+
+   &__wrapper {
+
+      @include abs.breakpoint-up(tablet) {
+         flex-direction: row-reverse;
+         gap: 5rem;
+      }
+  }
 }
