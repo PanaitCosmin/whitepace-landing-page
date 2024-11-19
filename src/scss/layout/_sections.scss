@@ -19,3 +19,7 @@
       }
   }
 }
+
+.custome {
+   @include abs.section-styles(abs.$black)
+}
