@@ -23,3 +23,13 @@
 .custome {
    @include abs.section-styles(abs.$black)
 }
+
+.data {
+   @include abs.section-styles(abs.$black);
+
+   @include abs.breakpoint-down(tablet) {
+      &__wrapper {
+         flex-direction: column-reverse;
+      }
+   }
+}
