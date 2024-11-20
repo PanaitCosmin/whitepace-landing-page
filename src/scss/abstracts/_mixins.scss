@@ -16,6 +16,17 @@ $down-arrow: url('../icons/down-arrow.svg');
     }
 }
 
+@mixin breakpoint-down($viewport) {
+    $max-width: map-get(bp.$breakpoints-down, $viewport);
+    @if $max-width {
+        @media (max-width: #{$max-width}) {
+            @content;
+        }
+    } @else {
+        @warn "No breakpoint found for `#{$viewport}` in `bp.$breakpoints-down`.";
+    }
+}
+
 
 @mixin flex-space-between-center {
     display: flex;
