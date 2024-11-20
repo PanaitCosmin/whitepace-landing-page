@@ -33,3 +33,32 @@
       }
    }
 }
+
+.app-integration {
+   background-color: abs.$primary-dark-blue;
+
+   img {
+      max-height: abs.toRem(450);
+   }
+
+   @include abs.section-styles(abs.$white);
+
+   @include abs.breakpoint-down(tablet) {
+
+      &__wrapper {
+         flex-direction: column-reverse;
+         gap: 2rem;
+         padding-top: abs.toRem(40);
+         padding-bottom: abs.toRem(40);
+      }
+   }
+
+   @include abs.breakpoint-up(tablet) {
+
+      &__wrapper {
+         padding-top: abs.toRem(140);
+         padding-bottom: abs.toRem(140);
+         flex-direction: row-reverse;
+      }
+   }
+}
