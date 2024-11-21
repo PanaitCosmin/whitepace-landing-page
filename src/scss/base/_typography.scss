@@ -25,6 +25,5 @@ section {
 
 h1 {
     line-height: 1.2;
-    max-width: 16ch;
     font-size: clamp(abs.toRem(36), calc(2.5vw + 1.5rem), abs.toRem(64));
 }
