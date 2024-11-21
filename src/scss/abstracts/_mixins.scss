@@ -85,7 +85,7 @@ $down-arrow: url('../icons/down-arrow.svg');
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1.5rem;
 
         @include breakpoint-up(tablet) {
             align-items: flex-start;
