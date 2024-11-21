@@ -34,6 +34,35 @@
    }
 }
 
+.sponsors {
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+
+      @include abs.breakpoint-up(tablet) {
+         gap: 5rem;
+      }
+   
+   }
+
+   &__logos {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+   
+      @include abs.breakpoint-up(tablet) {
+         flex-direction: row;
+         justify-content: space-between;
+      }
+   
+   }
+
+}
+
 .app-integration {
    background-color: abs.$primary-dark-blue;
 
