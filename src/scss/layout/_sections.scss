@@ -24,6 +24,40 @@
    @include abs.section-styles(abs.$black)
 }
 
+.platforms {
+   background-color: abs.$primary-dark-blue;
+   color: abs.$white;
+
+   &__wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: abs.toRem(100) abs.toRem(16);
+      margin-inline: auto;
+
+      @include abs.breakpoint-up(tablet) {
+         max-width: 100ch;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+
+   &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+
+      @include abs.breakpoint-up(tablet) {
+         align-items: center;
+         text-align: center;
+      }
+   }
+
+}
+
 .data {
    @include abs.section-styles(abs.$black);
 
