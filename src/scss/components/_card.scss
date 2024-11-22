@@ -1,0 +1,54 @@
+@use '../abstracts/' as abs;
+
+.card {
+    width: abs.toRem(470);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: abs.toRem(25);
+    padding: abs.toRem(40) abs.toRem(44);
+    border-radius: abs.toRem(10);
+    border: 1px solid abs.$secondary-yellow;
+
+    &__service {
+        font-size: abs.toRem(24);
+        font-weight: normal;
+    }
+
+    &__cost {
+        font-size: abs.toRem(34);
+    }
+
+    // Remove button arrow 
+    .btn-secondary {
+        &:after {
+            content: none;
+        }
+    }
+
+    &__benefit {
+        position: relative;
+        margin-top: abs.toRem(25);
+        margin-bottom: abs.toRem(25);
+
+        display: flex;
+        align-items: center;
+        gap: abs.toRem(19);
+
+
+        &:before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            min-width: 1.5rem;
+            min-height: 1.5rem;
+    
+            // Inline SVG as background
+            mask: url('../icons/check.svg');
+            -webkit-mask: url('../icons/check.svg');
+            background-color: abs.$black;
+        }
+    }
+
+}
