@@ -6,12 +6,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: abs.toRem(25);
+    margin: abs.toRem(25);
     padding: abs.toRem(40) abs.toRem(44);
     border-radius: abs.toRem(10);
     border: 1px solid abs.$secondary-yellow;
 
     &__service {
+        display: flex;
+        flex-direction: column;
+        gap: abs.toRem(25);
+    }
+
+    &__title {
         font-size: abs.toRem(24);
         font-weight: normal;
     }
