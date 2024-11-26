@@ -4,16 +4,16 @@
 $breakpoints-up: (
     // 'mobile' : f.toEm(320),
     'tablet' : f.toEm(769),
-    // 'small-desktop' : f.toEm(1152),
+    'small-desktop' : f.toEm(963),
     'desktop' : f.toEm(1264),
     // 'large-desktop' : f.toEm(1920), 
 );
 
 // For max-width
 $breakpoints-down: (
-    // 'mobile' : f.toEm(320),
-    'tablet' : f.toEm(768),
-    // 'small-desktop' : f.toEm(1152),
+    'mobile' : f.toEm(550),
+    'tablet' : f.toEm(768), 
+    //'small-desktop' : f.toEm(963),
     'desktop' : f.toEm(1264),
     // 'large-desktop' : f.toEm(1920), 
 );
