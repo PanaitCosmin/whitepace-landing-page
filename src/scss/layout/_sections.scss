@@ -24,6 +24,69 @@
    @include abs.section-styles(abs.$black)
 }
 
+.payment {
+   &__text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+
+      p {
+         max-width: abs.toRem(960);
+         font-size: abs.toRem(18);
+      }
+   }
+
+   &__cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: abs.toRem(60);
+
+      @include abs.breakpoint-up(small-desktop) {
+         flex-direction: row;
+      }
+
+      .card {
+         display: none;
+
+         &--active {
+            display: block;
+         }
+
+         @include abs.breakpoint-up(small-desktop) {
+            display: block;
+         }
+      }
+   }
+
+   &__pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+
+      @include abs.breakpoint-up(small-desktop) {
+         display: none;
+      }
+   }
+
+   &__dot {
+      height: 1em;
+      width: 1em;
+      margin: 0.5rem;
+      background-color: abs.$primary-light-blue;
+      border-radius: 50%;
+      cursor: pointer;
+      
+      &--active {
+         background-color: abs.$primary-dark-blue;
+      }
+   }
+}
+
 .platforms {
    background-color: abs.$primary-dark-blue;
    color: abs.$white;
