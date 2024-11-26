@@ -7,12 +7,12 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin: abs.toRem(25);
     padding: abs.toRem(20) abs.toRem(20);
     border-radius: abs.toRem(10);
     border: 1px solid abs.$secondary-yellow;
     
     @include abs.breakpoint-up(tablet) {
+        margin: abs.toRem(25);
         padding: abs.toRem(40) abs.toRem(44);
     }
 
