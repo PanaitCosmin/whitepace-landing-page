@@ -1,15 +1,20 @@
 @use '../abstracts/' as abs;
 
 .card {
-    width: abs.toRem(470);
+    max-width: abs.toRem(470);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin: abs.toRem(25);
-    padding: abs.toRem(40) abs.toRem(44);
+    padding: abs.toRem(20) abs.toRem(20);
     border-radius: abs.toRem(10);
     border: 1px solid abs.$secondary-yellow;
+    
+    @include abs.breakpoint-up(tablet) {
+        padding: abs.toRem(40) abs.toRem(44);
+    }
 
     &__service {
         display: flex;
@@ -18,12 +23,12 @@
     }
 
     &__title {
-        font-size: abs.toRem(24);
+        font-size: abs.toRem(24); //18
         font-weight: normal;
     }
 
     &__cost {
-        font-size: abs.toRem(34);
+        font-size: abs.toRem(34); //20
     }
 
     // Remove button arrow 
