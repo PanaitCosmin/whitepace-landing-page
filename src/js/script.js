@@ -36,3 +36,34 @@ updateCard();
 
 // Re-run updateReview on window resize to ensure proper layout on viewport change
 window.addEventListener("resize", updateCard);
+
+
+// Review Navigation
+let currentReviewIdx = 0
+const reviewCards = document.querySelectorAll('.review__card');
+const reviewDots = document.querySelectorAll('.dot2');
+
+function updateCardReview() {
+
+    // Update Review Card
+    reviewCards.forEach(card => card.classList.remove('review__card--active'))
+    reviewCards[currentReviewIdx].classList.add('review__card--active')
+
+    // Update Dots Review
+    reviewDots.forEach(dot => dot.classList.remove('dot2--active'))
+    reviewDots[currentReviewIdx].classList.add('dot2--active')
+}
+
+reviewDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentReviewIdx = index;
+        updateCardReview();
+    })
+})
+
+// Initialize the first card
+updateCardReview();
+
+// Re-run updateReview on window resize to ensure proper layout on viewport change
+window.addEventListener("resize", updateCardReview);
+
