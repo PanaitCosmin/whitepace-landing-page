@@ -63,3 +63,55 @@
     }
 
 }
+
+
+.review__card {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: abs.toRem(480);
+    min-height: abs.toRem(500);
+    flex-wrap: wrap;
+    gap: abs.toRem(35);
+    padding: abs.toRem(20) 1rem;
+    border-radius: abs.toRem(10);
+
+    -webkit-box-shadow: 17px 26px 15px -7px rgba(0,0,0,0.35);
+    -moz-box-shadow: 17px 26px 15px -7px rgba(0,0,0,0.35);
+    box-shadow: 17px 26px 15px -7px rgba(0,0,0,0.35);
+
+    @include abs.breakpoint-up(small-desktop) {
+        padding: abs.toRem(60) abs.toRem(40);
+        display: flex;
+    }
+
+    img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+
+    &__mess {
+        line-height: 1.7;
+    }
+      
+    &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: abs.toRem(30);
+
+        @include abs.breakpoint-up(small-desktop) {
+            flex-direction: row;
+            justify-content: space-between;  
+            align-items: flex-start;
+            margin-top: abs.toRem(50);
+        }
+    }
+
+    .stars {
+        color: gold;
+    }
+      
+}
