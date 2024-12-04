@@ -161,6 +161,13 @@
 }
 
 .review {
+
+   &__text {
+      text-align: center;
+      margin-bottom: abs.toRem(60);
+   }
+
+
    &__cards {
 
       display: flex;
