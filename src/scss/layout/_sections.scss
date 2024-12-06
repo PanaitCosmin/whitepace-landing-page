@@ -251,3 +251,58 @@
       }
    }
 }
+
+
+.footer {
+   background-color: abs.$primary-dark-blue;
+   color: abs.$white;
+
+
+   &__wrapper {
+      padding-top: abs.toRem(100);
+      padding-bottom: abs.toRem(100);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+
+      @include abs.breakpoint-up(small-desktop) {
+         flex-direction: row;
+         align-items: flex-start;
+      }
+
+   }
+
+   &__logo,
+   &__product,
+   &__resources,
+   &__company,
+   &__btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      gap: 1.5rem;
+
+      h2,
+      a {
+         font-size: abs.toRem(18);
+      }
+   }
+
+   &__logo {
+      line-height: 1.8;
+      max-width: abs.toRem(300);
+
+      img {
+         height: abs.toRem(29);
+      }
+   }
+
+   &__btn {
+      max-width: 70%;
+      text-align: center;
+   }
+}
