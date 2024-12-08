@@ -18,11 +18,6 @@ jobs:
       - name: Install dependencies
         run: npm install # Adjust for your build system
 
-      # Build the project
-      # Remove this step if your site is prebuilt
-      - name: Build
-        run: npm run build # Adjust for your build system
-
       # Upload built content to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
