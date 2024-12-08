@@ -56,8 +56,8 @@
             min-height: 1.5rem;
     
             // Inline SVG as background
-            mask: url('../icons/check.svg');
-            -webkit-mask: url('../icons/check.svg');
+            mask: url('./icons/check.svg');
+            -webkit-mask: url('./icons/check.svg');
             background-color: abs.$black;
         }
     }
