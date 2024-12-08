@@ -61,30 +61,6 @@
          }
       }
    }
-
-   &__pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 3rem;
-
-      @include abs.breakpoint-up(small-desktop) {
-         display: none;
-      }
-   }
-
-   &__dot {
-      height: 1em;
-      width: 1em;
-      margin: 0.5rem;
-      background-color: abs.$primary-light-blue;
-      border-radius: 50%;
-      cursor: pointer;
-      
-      &--active {
-         background-color: abs.$primary-dark-blue;
-      }
-   }
 }
 
 .platforms {
@@ -195,32 +171,6 @@
          display: flex;
      }
    }
-
-   .pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 3rem;
-
-      @include abs.breakpoint-up(small-desktop) {
-         display: none;
-      }
-   }
-
-   .dot2 {
-      height: 1em;
-      width: 1em;
-      margin: 0.5rem;
-      background-color: abs.$primary-light-blue;
-      border-radius: 50%;
-      cursor: pointer;
-      
-      &--active {
-         background-color: abs.$primary-dark-blue;
-      }
-   }
-
-
 }
 
 .app-integration {
