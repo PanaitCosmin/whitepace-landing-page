@@ -12,7 +12,7 @@ navLinks.forEach((link, idx) => {
 // Payment Pagination
 let currentCardIdx = 0;
 const cards = document.querySelectorAll('.card');
-const dots = document.querySelectorAll('.payment__dot');
+const dots = document.querySelectorAll('.payment-dot');
 
 function updateCard() {
     // Selected card visible
@@ -20,8 +20,8 @@ function updateCard() {
     cards[currentCardIdx].classList.add('card--active')
 
     // Selected dot active
-    dots.forEach(dot => dot.classList.remove('payment__dot--active'))
-    dots[currentCardIdx].classList.add('payment__dot--active')
+    dots.forEach(dot => dot.classList.remove('payment-dot--active'))
+    dots[currentCardIdx].classList.add('payment-dot--active')
 }
 
 dots.forEach((dot, index) => {
@@ -41,7 +41,7 @@ window.addEventListener("resize", updateCard);
 // Review Navigation
 let currentReviewIdx = 0
 const reviewCards = document.querySelectorAll('.review__card');
-const reviewDots = document.querySelectorAll('.dot2');
+const reviewDots = document.querySelectorAll('.review-dot');
 
 function updateCardReview() {
 
@@ -50,8 +50,8 @@ function updateCardReview() {
     reviewCards[currentReviewIdx].classList.add('review__card--active')
 
     // Update Dots Review
-    reviewDots.forEach(dot => dot.classList.remove('dot2--active'))
-    reviewDots[currentReviewIdx].classList.add('dot2--active')
+    reviewDots.forEach(dot => dot.classList.remove('review-dot--active'))
+    reviewDots[currentReviewIdx].classList.add('review-dot--active')
 }
 
 reviewDots.forEach((dot, index) => {
