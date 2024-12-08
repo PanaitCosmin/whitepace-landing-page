@@ -247,6 +247,7 @@
       &__wrapper {
          padding-top: abs.toRem(140);
          padding-bottom: abs.toRem(140);
+         gap: 4rem;
          flex-direction: row-reverse;
       }
    }
