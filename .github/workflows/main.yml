@@ -33,7 +33,7 @@ jobs:
         run: ls -la dist || (echo "❌ dist folder NOT found!" && exit 1)
 
       - name: Upload static files as artifact
-        uses: actions/upload-pages-artifact@v2  # Use the correct action for GitHub Pages
+        uses: actions/upload-pages-artifact@v1  # ✅ Use correct action
         with:
           path: dist  # Ensure this matches your Gulp output
 
@@ -45,5 +45,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: Download artifact
+        uses: actions/download-pages-artifact@v1  # ✅ Use correct action
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
