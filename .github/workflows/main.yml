@@ -29,10 +29,10 @@ jobs:
 
       # Upload the dist folder as a GitHub Pages artifact
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v4  # Use the correct version
+        uses: actions/upload-pages-artifact@v3  # Use the correct version
         with:
           path: dist  # Ensure this is the correct folder
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
