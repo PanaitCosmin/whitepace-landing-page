@@ -14,17 +14,25 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Verify the dist folder exists
       - name: Check if dist folder exists
         run: ls -la dist || (echo "❌ dist folder NOT found!" && exit 1)
 
+      # Upload the dist folder as a GitHub Pages artifact
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4  # Use the correct version
         with:
           path: dist  # Ensure this is the correct folder
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
