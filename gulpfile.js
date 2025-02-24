@@ -84,3 +84,6 @@ exports.default = series(
     browsersyncServe,
     watchTasks
 )
+
+// Build task for CI/CD (GitHub Actions)
+exports.build = series(scssTask, jsTask, htmlTask, iconsTask, imgsTask);
