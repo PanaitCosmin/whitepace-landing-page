@@ -3,7 +3,7 @@
 // @use 'abstracts/variables' as vars;
 
 // Path to the down-arrow SVG
-$down-arrow: url('../icons/down-arrow.svg');
+$down-arrow: url('./icons/down-arrow.svg');
 
 @mixin breakpoint-up($viewport) {
     $min-width: map-get(bp.$breakpoints-up, $viewport);
