@@ -22,7 +22,7 @@ jobs:
         run: ls -la dist || (echo "❌ dist folder NOT found!" && exit 1)
 
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: dist  # Ensure this is the correct folder
 
