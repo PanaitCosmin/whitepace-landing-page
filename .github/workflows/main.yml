@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust to your target branch
+      - main  # Adjust to your branch
   workflow_dispatch:
 
 permissions:
@@ -12,41 +12,19 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18  # Match your local Node.js version
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Gulp Build
-        run: npx gulp build  # Runs "gulp build"
-
       - name: Check if dist folder exists
         run: ls -la dist || (echo "❌ dist folder NOT found!" && exit 1)
 
-      - name: Upload static files as artifact
-        uses: actions/upload-artifact@v4  # ✅ Use correct action
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # Ensure this matches your Gulp output
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4  # ✅ Use correct action
+          path: dist  # Ensure this is the correct folder
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
