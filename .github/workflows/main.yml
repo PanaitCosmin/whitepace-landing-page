@@ -17,19 +17,28 @@ jobs:
     steps:
       # Step 1: Check out the repository
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # Step 2: Build the project (if needed)
-      # Skip this step if your static files are prebuilt
-      #- name: Build the project
-      #  run: npm install && npm run build
+      # Step 2: Install dependencies and build the project
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
 
-      # Step 3: Upload the static files as an artifact
+      # Step 3: Upload the static files as an artifact (Updated to v4)
       - name: Upload static files
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2 # Update to v2
         with:
-          path: dist # Adjust this to the folder containing your static site files
+          path: dist # Adjust this to your build output folder
 
-      # Step 4: Deploy to GitHub Pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v2
